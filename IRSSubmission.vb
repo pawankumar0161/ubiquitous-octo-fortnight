@@ -120,8 +120,8 @@ Public Class IRSSubmission
             Dim xml64 As String = Convert.ToBase64String(xml641)
             Dim pdf2 = "" 'File.ReadAllBytes(updPDF.FileName)
             Dim pdf264 As String = "" 'Convert.ToBase64String(pdf2)
-
-            Dim client = New RestClient("http://aimcorp-002-site6.gtempurl.com/api/values/login")
+            Dim client = New RestClient("Http://aimcorp-002-site6.gtempurl.com/api/values/login")
+            'Dim client = New RestClient("https://localhost:44300/api/values/login")
             Dim request = New RestRequest(Method.POST)
             request.AddHeader("cache-control", "no-cache")
             request.AddHeader("content-type", "application/json")
@@ -150,7 +150,8 @@ Public Class IRSSubmission
     Private Sub btnGetAck_Click(sender As Object, e As EventArgs) Handles btnGetAck.Click
         Try
 
-            Dim client = New RestClient("http://aimcorp-002-site6.gtempurl.com/api/values/ack")
+            'Dim client = New RestClient("Http://aimcorp-002-site6.gtempurl.com/api/values/ack")
+            Dim client = New RestClient("https://localhost:44300/api/values/ack")
             Dim request = New RestRequest(Method.POST)
             request.AddHeader("postman-token", "ff39a466-c98d-18ec-2a80-4678ff97bbc0")
             request.AddHeader("cache-control", "no-cache")
